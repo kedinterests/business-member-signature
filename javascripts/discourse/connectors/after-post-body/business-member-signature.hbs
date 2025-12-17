@@ -1,0 +1,16 @@
+{{#if post.user.primary_group_name}}
+  {{#if (includes-group settings.profile_link_groups post.user.primary_group_name)}}
+    <div class="group-signature">
+      <a class="group-user-link" href="/u/{{post.user.username}}/summary">
+        {{settings.profile_link_text}}
+      </a>
+    </div>
+  {{else if (includes-group settings.alternate_sig_groups post.user.primary_group_name)}}
+    <div class="alt-signature">
+      <a class="alt-sig-link" href="{{settings.alternate_sig_link}}">
+        {{settings.alternate_sig_text}}
+      </a>
+    </div>
+  {{/if}}
+{{/if}}
+
